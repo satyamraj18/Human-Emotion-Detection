@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: humanEmotionClassifier
+Version: 0.0.0
+Summary: A small python package for app
+Home-page: https://github.com/satyamraj18/Human-Emotion-Detection
+Author: satyamraj18
+Author-email: satyamraj.cet@gmail.com
+Project-URL: Bug Tracker, https://github.com/satyamraj18/Human-Emotion-Detection/issues
+License-File: LICENSE
+
+# Human-Emotion-Detection
