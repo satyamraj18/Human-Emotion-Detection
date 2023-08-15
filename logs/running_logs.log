@@ -7,3 +7,11 @@
 [2023-08-15 11:58:51,612: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
 
 x==========x]
+[2023-08-15 12:02:42,951: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2023-08-15 12:02:42,951: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-08-15 12:02:42,951: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-08-15 12:02:42,982: INFO: common: created directory at: artifacts]
+[2023-08-15 12:02:42,982: INFO: common: created directory at: artifacts/data_ingestion]
+[2023-08-15 12:02:53,059: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
