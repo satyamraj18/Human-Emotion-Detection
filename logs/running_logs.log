@@ -15,3 +15,46 @@ x==========x]
 [2023-08-15 12:02:53,059: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
 
 x==========x]
+[2023-08-18 16:54:25,571: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2023-08-18 16:54:25,603: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-08-18 16:54:25,603: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-08-18 16:54:25,618: INFO: common: created directory at: artifacts]
+[2023-08-18 16:54:25,618: INFO: common: created directory at: artifacts/data_ingestion]
+[2023-08-18 16:54:35,449: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2023-08-18 16:54:35,449: INFO: main: *******************]
+[2023-08-18 16:54:35,449: INFO: main: >>>>>> stage Prepare base model started <<<<<<]
+[2023-08-18 16:54:35,449: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-08-18 16:54:35,464: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-08-18 16:54:35,464: INFO: common: created directory at: artifacts]
+[2023-08-18 16:54:35,464: INFO: common: created directory at: artifacts/prepare_base_model]
+[2023-08-18 16:54:35,464: ERROR: main: 'ConfigurationManager' object has no attribute 'params']
+Traceback (most recent call last):
+  File "D:\Satyam Projects\Human-Emotion-Detection\main.py", line 20, in <module>
+    prepare_base_model.main()
+  File "d:\satyam projects\human-emotion-detection\src\humanEmotionClassifier\pipeline\stage_02_prepare_base_model.py", line 14, in main
+    prepare_base_model_config = config.get_prepare_base_model_config()
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\satyam projects\human-emotion-detection\src\humanEmotionClassifier\config\configuration.py", line 31, in get_prepare_base_model_config
+    params_image_size=self.params.IMAGE_SIZE,
+                      ^^^^^^^^^^^
+AttributeError: 'ConfigurationManager' object has no attribute 'params'
+[2023-08-18 16:58:20,911: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2023-08-18 16:58:20,911: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-08-18 16:58:20,927: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-08-18 16:58:20,927: INFO: common: created directory at: artifacts]
+[2023-08-18 16:58:20,927: INFO: common: created directory at: artifacts/data_ingestion]
+[2023-08-18 16:58:28,710: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2023-08-18 16:58:28,710: INFO: main: *******************]
+[2023-08-18 16:58:28,710: INFO: main: >>>>>> stage Prepare base model started <<<<<<]
+[2023-08-18 16:58:28,710: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-08-18 16:58:28,710: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-08-18 16:58:28,710: INFO: common: created directory at: artifacts]
+[2023-08-18 16:58:28,710: INFO: common: created directory at: artifacts/prepare_base_model]
+[2023-08-18 16:58:36,603: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2023-08-18 16:58:43,087: INFO: main: >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
