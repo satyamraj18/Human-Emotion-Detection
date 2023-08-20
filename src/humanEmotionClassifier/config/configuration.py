@@ -1,6 +1,7 @@
 from humanEmotionClassifier.utils.common import create_directories,read_yaml
-from humanEmotionClassifier.entity.config_entity import (DataIngestionConfig,PrepareBaseModelConfig)
+from humanEmotionClassifier.entity.config_entity import (DataIngestionConfig,PrepareBaseModelConfig,PrepareCallbacksConfig)
 from humanEmotionClassifier.constants import *
+import os
 
 class ConfigurationManager:
     def __init__(self,config_filepath=CONFIG_FILE_PATH,param_filepath=PARAMS_FILE_PATH):
@@ -36,3 +37,19 @@ class ConfigurationManager:
         )
 
         return prepare_base_model_config
+    
+    def get_prepare_callback_config(self) -> PrepareCallbacksConfig:
+        config = self.config.prepare_callbacks
+        model_ckpt_dir = os.path.dirname(config.checkpoint_model_filepath)
+        create_directories([
+            Path(model_ckpt_dir),
+            Path(config.tensorboard_root_log_dir)
+        ])
+
+        prepare_callback_config = PrepareCallbacksConfig(
+            root_dir=Path(config.root_dir),
+            tensorboard_root_log_dir=Path(config.tensorboard_root_log_dir),
+            checkpoint_model_filepath=Path(config.checkpoint_model_filepath)
+        )
+
+        return prepare_callback_config
