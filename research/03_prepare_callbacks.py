@@ -54,11 +54,11 @@ class PrepareCallback:
             f"tb_logs_at_{timestamp}",
         )
         return tf.keras.callbacks.TensorBoard(log_dir=tb_running_log_dir)
-
+    
     @property
     def _create_ckpt_callbacks(self):
         return tf.keras.callbacks.ModelCheckpoint(
-            filepath=self.config.checkpoint_model_filepath,
+            filepath=str(self.config.checkpoint_model_filepath),
             save_best_only=True
         )
 
@@ -66,8 +66,7 @@ class PrepareCallback:
     def get_tb_ckpt_callbacks(self):
         return [
             self._create_tb_callbacks,
-            self._create_ckpt_callbacks
-        ]
+            self._create_ckpt_callbacks]
 
 try:
     config = ConfigurationManager()

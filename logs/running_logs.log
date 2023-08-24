@@ -58,3 +58,73 @@ x==========x]
 [2023-08-18 16:58:43,087: INFO: main: >>>>>> stage Prepare base model completed <<<<<<
 
 x==========x]
+[2023-08-23 17:14:03,654: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2023-08-23 17:14:03,670: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-08-23 17:14:03,685: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-08-23 17:14:03,701: INFO: common: created directory at: artifacts]
+[2023-08-23 17:14:03,701: INFO: common: created directory at: artifacts/data_ingestion]
+[2023-08-23 17:14:13,338: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2023-08-23 17:14:13,338: INFO: main: *******************]
+[2023-08-23 17:14:13,354: INFO: main: >>>>>> stage Prepare base model started <<<<<<]
+[2023-08-23 17:14:13,354: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-08-23 17:14:13,354: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-08-23 17:14:13,354: INFO: common: created directory at: artifacts]
+[2023-08-23 17:14:13,448: INFO: common: created directory at: artifacts/prepare_base_model]
+[2023-08-23 17:14:20,794: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2023-08-23 17:14:26,699: INFO: main: >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
+[2023-08-23 17:14:26,699: INFO: main: *******************]
+[2023-08-23 17:14:26,699: INFO: main: >>>>>> stage Training started <<<<<<]
+[2023-08-23 17:14:26,715: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-08-23 17:14:26,715: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-08-23 17:14:26,715: INFO: common: created directory at: artifacts]
+[2023-08-23 17:14:26,825: INFO: common: created directory at: artifacts\prepare_callbacks\checkpoint_dir]
+[2023-08-23 17:14:26,825: INFO: common: created directory at: artifacts\prepare_callbacks\tensorboard_log_dir]
+[2023-08-23 17:14:26,857: ERROR: main: 'WindowsPath' object has no attribute 'endswith']
+Traceback (most recent call last):
+  File "D:\Satyam Projects\Human-Emotion-Detection\main.py", line 32, in <module>
+    model_trainer.main()
+  File "d:\satyam projects\human-emotion-detection\src\humanEmotionClassifier\pipeline\stage_03_training.py", line 19, in main
+    callback_list = prepare_callbacks.get_tb_ckpt_callbacks()
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\satyam projects\human-emotion-detection\src\humanEmotionClassifier\components\prepare_callbacks.py", line 32, in get_tb_ckpt_callbacks
+    self._create_ckpt_callbacks
+  File "d:\satyam projects\human-emotion-detection\src\humanEmotionClassifier\components\prepare_callbacks.py", line 23, in _create_ckpt_callbacks
+    return tf.keras.callbacks.ModelCheckpoint(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\humanEmotion\Lib\site-packages\keras\src\callbacks.py", line 1369, in __init__
+    if filepath and filepath.endswith(".keras") and options is not None:
+                    ^^^^^^^^^^^^^^^^^
+AttributeError: 'WindowsPath' object has no attribute 'endswith'
+[2023-08-23 17:16:46,996: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2023-08-23 17:16:46,996: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-08-23 17:16:47,011: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-08-23 17:16:47,011: INFO: common: created directory at: artifacts]
+[2023-08-23 17:16:47,028: INFO: common: created directory at: artifacts/data_ingestion]
+[2023-08-23 17:16:56,035: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2023-08-23 17:16:56,035: INFO: main: *******************]
+[2023-08-23 17:16:56,035: INFO: main: >>>>>> stage Prepare base model started <<<<<<]
+[2023-08-23 17:16:56,041: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-08-23 17:16:56,051: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-08-23 17:16:56,051: INFO: common: created directory at: artifacts]
+[2023-08-23 17:16:56,051: INFO: common: created directory at: artifacts/prepare_base_model]
+[2023-08-23 17:17:01,438: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2023-08-23 17:17:05,789: INFO: main: >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
+[2023-08-23 17:17:05,789: INFO: main: *******************]
+[2023-08-23 17:17:05,789: INFO: main: >>>>>> stage Training started <<<<<<]
+[2023-08-23 17:17:05,805: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-08-23 17:17:05,805: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-08-23 17:17:05,805: INFO: common: created directory at: artifacts]
+[2023-08-23 17:17:05,805: INFO: common: created directory at: artifacts\prepare_callbacks\checkpoint_dir]
+[2023-08-23 17:17:05,883: INFO: common: created directory at: artifacts\prepare_callbacks\tensorboard_log_dir]
+[2023-08-23 17:17:06,009: INFO: common: created directory at: artifacts\training]
+[2023-08-23 17:23:46,538: INFO: main: >>>>>> stage Training completed <<<<<<
+
+x==========x]
