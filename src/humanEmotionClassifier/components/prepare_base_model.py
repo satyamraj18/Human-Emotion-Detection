@@ -11,7 +11,7 @@ class PrepareBaseModel:
         self.config = config
     
     def get_base_model(self):
-        self.model = tf.keras.applications.resnet50.ResNet50(include_top=self.config.params_include_top,
+        self.model = tf.keras.applications.xception.Xception(include_top=self.config.params_include_top,
                      weights=self.config.params_weights,
                      input_shape=self.config.params_image_size,
                      classes=self.config.params_classes)

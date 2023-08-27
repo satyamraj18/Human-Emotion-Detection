@@ -128,3 +128,271 @@ x==========x]
 [2023-08-23 17:23:46,538: INFO: main: >>>>>> stage Training completed <<<<<<
 
 x==========x]
+[2023-08-26 16:34:43,885: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2023-08-26 16:34:43,900: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-08-26 16:34:43,900: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-08-26 16:34:43,900: INFO: common: created directory at: artifacts]
+[2023-08-26 16:34:43,900: INFO: common: created directory at: artifacts/data_ingestion]
+[2023-08-26 16:34:51,232: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2023-08-26 16:34:51,232: INFO: main: *******************]
+[2023-08-26 16:34:51,232: INFO: main: >>>>>> stage Prepare base model started <<<<<<]
+[2023-08-26 16:34:51,247: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-08-26 16:34:51,247: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-08-26 16:34:51,247: INFO: common: created directory at: artifacts]
+[2023-08-26 16:34:51,247: INFO: common: created directory at: artifacts/prepare_base_model]
+[2023-08-26 16:34:57,078: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2023-08-26 16:35:01,831: INFO: main: >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
+[2023-08-26 16:35:01,831: INFO: main: *******************]
+[2023-08-26 16:35:01,831: INFO: main: >>>>>> stage Training started <<<<<<]
+[2023-08-26 16:35:01,831: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-08-26 16:35:01,831: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-08-26 16:35:01,831: INFO: common: created directory at: artifacts]
+[2023-08-26 16:35:02,003: INFO: common: created directory at: artifacts\prepare_callbacks\checkpoint_dir]
+[2023-08-26 16:35:02,003: INFO: common: created directory at: artifacts\prepare_callbacks\tensorboard_log_dir]
+[2023-08-26 16:35:02,034: INFO: common: created directory at: artifacts\training]
+[2023-08-26 16:41:02,570: INFO: main: >>>>>> stage Training completed <<<<<<
+
+x==========x]
+[2023-08-26 17:00:33,524: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2023-08-26 17:00:33,540: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-08-26 17:00:33,540: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-08-26 17:00:33,540: INFO: common: created directory at: artifacts]
+[2023-08-26 17:00:33,555: INFO: common: created directory at: artifacts/data_ingestion]
+[2023-08-26 17:00:40,492: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2023-08-26 17:00:40,492: INFO: main: *******************]
+[2023-08-26 17:00:40,492: INFO: main: >>>>>> stage Prepare base model started <<<<<<]
+[2023-08-26 17:00:40,508: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-08-26 17:00:40,508: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-08-26 17:00:40,508: INFO: common: created directory at: artifacts]
+[2023-08-26 17:00:40,508: INFO: common: created directory at: artifacts/prepare_base_model]
+[2023-08-26 17:00:40,508: ERROR: main: "'ConfigBox' object has no attribute 'image_size'"]
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\humanEmotion\Lib\site-packages\box\box.py", line 503, in __getitem__
+    return super().__getitem__(item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'IMAGE_SIZE'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\humanEmotion\Lib\site-packages\box\box.py", line 536, in __getattr__
+    value = self.__getitem__(item, _ignore_default=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\humanEmotion\Lib\site-packages\box\box.py", line 524, in __getitem__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'IMAGE_SIZE'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\humanEmotion\Lib\site-packages\box\box.py", line 538, in __getattr__
+    value = object.__getattribute__(self, item)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ConfigBox' object has no attribute 'IMAGE_SIZE'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\humanEmotion\Lib\site-packages\box\config_box.py", line 28, in __getattr__
+    return super().__getattr__(item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\humanEmotion\Lib\site-packages\box\box.py", line 552, in __getattr__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'IMAGE_SIZE'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\humanEmotion\Lib\site-packages\box\box.py", line 503, in __getitem__
+    return super().__getitem__(item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'image_size'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\humanEmotion\Lib\site-packages\box\box.py", line 536, in __getattr__
+    value = self.__getitem__(item, _ignore_default=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\humanEmotion\Lib\site-packages\box\box.py", line 524, in __getitem__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'image_size'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\humanEmotion\Lib\site-packages\box\box.py", line 538, in __getattr__
+    value = object.__getattribute__(self, item)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ConfigBox' object has no attribute 'image_size'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Satyam Projects\Human-Emotion-Detection\main.py", line 21, in <module>
+    prepare_base_model.main()
+  File "d:\satyam projects\human-emotion-detection\src\humanEmotionClassifier\pipeline\stage_02_prepare_base_model.py", line 14, in main
+    prepare_base_model_config = config.get_prepare_base_model_config()
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\satyam projects\human-emotion-detection\src\humanEmotionClassifier\config\configuration.py", line 32, in get_prepare_base_model_config
+    params_image_size=self.params.IMAGE_SIZE,
+                      ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\humanEmotion\Lib\site-packages\box\config_box.py", line 30, in __getattr__
+    return super().__getattr__(item.lower())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\humanEmotion\Lib\site-packages\box\box.py", line 552, in __getattr__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'image_size'"
+[2023-08-26 17:01:36,292: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2023-08-26 17:01:36,292: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-08-26 17:01:36,292: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-08-26 17:01:36,292: INFO: common: created directory at: artifacts]
+[2023-08-26 17:01:36,292: INFO: common: created directory at: artifacts/data_ingestion]
+[2023-08-26 17:01:43,072: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2023-08-26 17:01:43,072: INFO: main: *******************]
+[2023-08-26 17:01:43,072: INFO: main: >>>>>> stage Prepare base model started <<<<<<]
+[2023-08-26 17:01:43,072: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-08-26 17:01:43,072: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-08-26 17:01:43,072: INFO: common: created directory at: artifacts]
+[2023-08-26 17:01:43,072: INFO: common: created directory at: artifacts/prepare_base_model]
+[2023-08-26 17:01:43,072: ERROR: main: If using `weights` as `"imagenet"` with `include_top` as true, `classes` should be 1000]
+Traceback (most recent call last):
+  File "D:\Satyam Projects\Human-Emotion-Detection\main.py", line 21, in <module>
+    prepare_base_model.main()
+  File "d:\satyam projects\human-emotion-detection\src\humanEmotionClassifier\pipeline\stage_02_prepare_base_model.py", line 16, in main
+    prepare_base_model.get_base_model()
+  File "d:\satyam projects\human-emotion-detection\src\humanEmotionClassifier\components\prepare_base_model.py", line 14, in get_base_model
+    self.model = tf.keras.applications.xception.Xception(include_top=self.config.params_include_top,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\humanEmotion\Lib\site-packages\keras\src\applications\xception.py", line 130, in Xception
+    raise ValueError(
+ValueError: If using `weights` as `"imagenet"` with `include_top` as true, `classes` should be 1000
+[2023-08-26 17:03:21,108: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2023-08-26 17:03:21,108: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-08-26 17:03:21,108: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-08-26 17:03:21,155: INFO: common: created directory at: artifacts]
+[2023-08-26 17:03:21,155: INFO: common: created directory at: artifacts/data_ingestion]
+[2023-08-26 17:03:27,190: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2023-08-26 17:03:27,190: INFO: main: *******************]
+[2023-08-26 17:03:27,190: INFO: main: >>>>>> stage Prepare base model started <<<<<<]
+[2023-08-26 17:03:27,190: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-08-26 17:03:27,190: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-08-26 17:03:27,190: INFO: common: created directory at: artifacts]
+[2023-08-26 17:03:27,190: INFO: common: created directory at: artifacts/prepare_base_model]
+[2023-08-26 17:03:27,190: ERROR: main: "'ConfigBox' object has no attribute 'classes'"]
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\humanEmotion\Lib\site-packages\box\box.py", line 503, in __getitem__
+    return super().__getitem__(item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'CLASSES'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\humanEmotion\Lib\site-packages\box\box.py", line 536, in __getattr__
+    value = self.__getitem__(item, _ignore_default=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\humanEmotion\Lib\site-packages\box\box.py", line 524, in __getitem__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'CLASSES'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\humanEmotion\Lib\site-packages\box\box.py", line 538, in __getattr__
+    value = object.__getattribute__(self, item)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ConfigBox' object has no attribute 'CLASSES'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\humanEmotion\Lib\site-packages\box\config_box.py", line 28, in __getattr__
+    return super().__getattr__(item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\humanEmotion\Lib\site-packages\box\box.py", line 552, in __getattr__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'CLASSES'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\humanEmotion\Lib\site-packages\box\box.py", line 503, in __getitem__
+    return super().__getitem__(item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'classes'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\humanEmotion\Lib\site-packages\box\box.py", line 536, in __getattr__
+    value = self.__getitem__(item, _ignore_default=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\humanEmotion\Lib\site-packages\box\box.py", line 524, in __getitem__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'classes'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\humanEmotion\Lib\site-packages\box\box.py", line 538, in __getattr__
+    value = object.__getattribute__(self, item)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ConfigBox' object has no attribute 'classes'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Satyam Projects\Human-Emotion-Detection\main.py", line 21, in <module>
+    prepare_base_model.main()
+  File "d:\satyam projects\human-emotion-detection\src\humanEmotionClassifier\pipeline\stage_02_prepare_base_model.py", line 14, in main
+    prepare_base_model_config = config.get_prepare_base_model_config()
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\satyam projects\human-emotion-detection\src\humanEmotionClassifier\config\configuration.py", line 36, in get_prepare_base_model_config
+    params_classes=self.params.CLASSES
+                   ^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\humanEmotion\Lib\site-packages\box\config_box.py", line 30, in __getattr__
+    return super().__getattr__(item.lower())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\humanEmotion\Lib\site-packages\box\box.py", line 552, in __getattr__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'classes'"
+[2023-08-26 17:04:07,559: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2023-08-26 17:04:07,559: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-08-26 17:04:07,559: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-08-26 17:04:07,559: INFO: common: created directory at: artifacts]
+[2023-08-26 17:04:07,559: INFO: common: created directory at: artifacts/data_ingestion]
+[2023-08-26 17:04:14,217: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2023-08-26 17:04:14,217: INFO: main: *******************]
+[2023-08-26 17:04:14,217: INFO: main: >>>>>> stage Prepare base model started <<<<<<]
+[2023-08-26 17:04:14,233: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-08-26 17:04:14,233: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-08-26 17:04:14,233: INFO: common: created directory at: artifacts]
+[2023-08-26 17:04:14,233: INFO: common: created directory at: artifacts/prepare_base_model]
+[2023-08-26 17:04:23,379: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2023-08-26 17:04:30,053: INFO: main: >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
+[2023-08-26 17:04:30,053: INFO: main: *******************]
+[2023-08-26 17:04:30,053: INFO: main: >>>>>> stage Training started <<<<<<]
+[2023-08-26 17:04:30,053: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-08-26 17:04:30,053: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-08-26 17:04:30,053: INFO: common: created directory at: artifacts]
+[2023-08-26 17:04:30,131: INFO: common: created directory at: artifacts\prepare_callbacks\checkpoint_dir]
+[2023-08-26 17:04:30,131: INFO: common: created directory at: artifacts\prepare_callbacks\tensorboard_log_dir]
+[2023-08-26 17:04:30,147: INFO: common: created directory at: artifacts\training]
+[2023-08-26 17:10:22,458: INFO: main: >>>>>> stage Training completed <<<<<<
+
+x==========x]
