@@ -1,0 +1,117 @@
+schema: '2.0'
+stages:
+  data_ingestion:
+    cmd: python src/humanEmotionClassifier/pipeline/stage_01_data_ingestion.py
+    deps:
+    - path: config/config.yaml
+      hash: md5
+      md5: 2c4f5106ea7af901f8189ebdd5a47bfa
+      size: 815
+    - path: src/humanEmotionClassifier/pipeline/stage_01_data_ingestion.py
+      hash: md5
+      md5: 7986e6883ba8fe1139417be5c70d3490
+      size: 933
+    outs:
+    - path: artifacts/data_ingestion/Emotion-Images
+      hash: md5
+      md5: 1656d59f7b5c5bec9b465715500e7af6.dir
+      size: 85668863
+      nfiles: 265
+  prepare_base_model:
+    cmd: python src/humanEmotionClassifier/pipeline/stage_02_prepare_base_model.py
+    deps:
+    - path: config/config.yaml
+      hash: md5
+      md5: 2c4f5106ea7af901f8189ebdd5a47bfa
+      size: 815
+    - path: src/humanEmotionClassifier/pipeline/stage_02_prepare_base_model.py
+      hash: md5
+      md5: fdecff84b6f9015416319046ab9e2b66
+      size: 1020
+    params:
+      params.yaml:
+        CLASSES: 3
+        IMAGE_SIZE:
+        - 224
+        - 224
+        - 3
+        INCLUDE_TOP: false
+        LEARNING_RATE: 0.01
+        WEIGHTS: imagenet
+    outs:
+    - path: artifacts/prepare_base_model
+      hash: md5
+      md5: ee25a7082348d0e4cb08b42ad10bb35d.dir
+      size: 168936304
+      nfiles: 2
+  training:
+    cmd: python src/humanEmotionClassifier/pipeline/stage_03_training.py
+    deps:
+    - path: artifacts/data_ingestion/Emotion-Images
+      hash: md5
+      md5: 1656d59f7b5c5bec9b465715500e7af6.dir
+      size: 85668863
+      nfiles: 265
+    - path: artifacts/prepare_base_model
+      hash: md5
+      md5: ee25a7082348d0e4cb08b42ad10bb35d.dir
+      size: 168936304
+      nfiles: 2
+    - path: config/config.yaml
+      hash: md5
+      md5: 2c4f5106ea7af901f8189ebdd5a47bfa
+      size: 815
+    - path: src/humanEmotionClassifier/components/prepare_callbacks.py
+      hash: md5
+      md5: d6505845ddb8886ba763643e8adf3f00
+      size: 1004
+    - path: src/humanEmotionClassifier/pipeline/stage_03_training.py
+      hash: md5
+      md5: 1fa38e146a6064844ff82d44cc0dc1c8
+      size: 1292
+    params:
+      params.yaml:
+        AUGMENTATION: true
+        BATCH_SIZE: 16
+        EPOCHS: 15
+        IMAGE_SIZE:
+        - 224
+        - 224
+        - 3
+    outs:
+    - path: artifacts/training/model.h5
+      hash: md5
+      md5: c0528dccf6dcc66f280943bf9723dbd5
+      size: 86279576
+  evaluation:
+    cmd: python src/humanEmotionClassifier/pipeline/stage_04_evaluation.py
+    deps:
+    - path: artifacts/data_ingestion/Emotion-Images
+      hash: md5
+      md5: 1656d59f7b5c5bec9b465715500e7af6.dir
+      size: 85668863
+      nfiles: 265
+    - path: artifacts/training/model.h5
+      hash: md5
+      md5: c0528dccf6dcc66f280943bf9723dbd5
+      size: 86279576
+    - path: config/config.yaml
+      hash: md5
+      md5: 2c4f5106ea7af901f8189ebdd5a47bfa
+      size: 815
+    - path: src/humanEmotionClassifier/pipeline/stage_04_evaluation.py
+      hash: md5
+      md5: 90f80ec911e76748b2722fa5cb11df32
+      size: 890
+    params:
+      params.yaml:
+        BATCH_SIZE: 16
+        IMAGE_SIZE:
+        - 224
+        - 224
+        - 3
+    outs:
+    - path: scores.json
+      hash: md5
+      md5: 0730a8447daff23c3875960eb0ec9be2
+      size: 72
