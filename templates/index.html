@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload and Predict</title>
+    <style>
+        /* Style for the image display box */
+        #image-box {
+            width: 300px;
+            height: 300px;
+            border: 2px solid #ccc;
+            text-align: center;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            margin-bottom: 20px; 
+        }
+        .box
+        {
+          display: inline-block;         
+      }
+       .container {
+            display: flex; /* Use flexbox to create a horizontal layout */
+            /*justify-content: space-between; /* Distribute space between divs */*/
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Upload and Predict</h1>
+
+    <!-- Image display box -->
+    <div id="image-box">
+        <img id="uploaded-image" src="" alt="Uploaded Image">
+    </div>
+    <div class="container">
+    <!-- Input field and button for image upload -->
+    <div class="box">
+      <input type="file" accept="image/*" id="image-input">
+      <button onclick="uploadImage()">Upload</button>
+    </div>
+
+    <!-- Buttons for image prediction -->
+    <div class="box">
+        <button onclick="predictImage()">Predict</button>
+    </div>
+    </div>
+    <!-- Display area for prediction result -->
+    <div id="prediction-result"></div>
+
+    <script>
+        // Function to handle image upload
+        function uploadImage() {
+            const imageInput = document.getElementById('image-input');
+            const uploadedImage = document.getElementById('uploaded-image');
+            const file = imageInput.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function(e) {
+                uploadedImage.src = e.target.result;
+            };
+
+            if (file) {
+                reader.readAsDataURL(file);
+            }
+        }
+
+        // Function to simulate image prediction (replace with actual prediction code)
+        function predictImage() {
+            const predictionResult = document.getElementById('prediction-result');
+            predictionResult.innerHTML = 'Predicted Result: This is a sample prediction.';
+        }
+    </script>
+</body>
+</html>
